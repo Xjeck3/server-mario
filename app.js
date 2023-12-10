@@ -7,8 +7,6 @@ const PORT = process.env.PORT || 4025
 const cookieParser = require('cookie-parser');
 const { coockie_secret } = require("./config");
 
-
-
 const app = express();//обязательно точка с запятой тут
 
 
