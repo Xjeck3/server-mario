@@ -12,7 +12,7 @@ const app = express();//обязательно точка с запятой ту
 
 app.use(bodyParser.json());
 app.use(cors({
-  origin: ['http://localhost:3000', 'https://golden-capital.biz'],
+  origin: ['http://localhost:3000', 'https://mysite.com'],
   credentials: true
 }));
 
@@ -27,16 +27,16 @@ app.use((error, req, res, next) => {
   res.status(status).json({ message: message, data: data });
 });
 
-//const MONGOOSE_URI = "mongodb+srv://fakenrotes_testdev:Zws7eJp90c9f1X99@cluster0.orbemly.mongodb.net/";
+//const MONGOOSE_URI = "mongodb+srv://";
 
-const MONGOOSE_URI = `mongodb+srv://fakenroutes_capital_root:B7eSz9LfvQxzKa2y@cluster0.8fnlfei.mongodb.net/?retryWrites=true&w=majority`
+const MONGOOSE_URI = `mongodb+srv://`
 
-mongoose
-  .connect(MONGOOSE_URI)
-  .then((result) => {
+// mongoose
+//   .connect(MONGOOSE_URI)
+//   .then((result) => {
     app.listen(PORT, '0.0.0.0', () => {
       console.log(`Server started on port:${PORT}`);
     });
-  })
-  .catch((err) => console.log(err));
+  // })
+  // .catch((err) => console.log(err));
 
